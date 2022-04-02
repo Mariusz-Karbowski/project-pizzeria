@@ -79,6 +79,7 @@
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     }
 
     initAccordion(){
@@ -111,7 +112,7 @@
       });
     }
 
-    processOrder(){
+    processOrder() {
       const thisProduct = this;
       const formData = utils.serializeFormToObject(thisProduct.form);
       let price = thisProduct.data.price;
@@ -119,12 +120,39 @@
         const param = thisProduct.data.params[paramId];
         for(let optionId in param.options){
           const option = param.options[optionId];
-          if(formData[paramId] && formData[paramId].includes(optionId)){
+          const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
+          if(optionSelected){
             if(!option.default){
-              price +=  option.price;
-            }  
-          } else if(option.default){
-            price -= option.price;
+              price += option.price;
+            }
+          }
+          else {
+            if(option.default == true){
+              price -= option.price;
+            }
+          }
+          const optionImage = thisProduct.imageWrapper.querySelector(`.${paramId}-${optionId}`);
+          if(optionSelected){
+            if(option.default == true && optionImage != null){
+              optionImage.classList.add(classNames.menuProduct.imageVisible);
+            }
+          } else {
+            if(option.default == true && optionImage != null){
+              optionImage.classList.remove(classNames.menuProduct.imageVisible);
+            } else if (!option.default && optionImage != null){
+              console.log(optionImage);
+            }
+          }
+          if (formData[paramId] && formData[paramId].includes(optionId)){
+            if(!option.default && optionImage != null){
+              optionImage.classList.add(classNames.menuProduct.imageVisible);
+            }
+          } else {
+            if(!option.default && optionImage != null){
+              optionImage.classList.remove(classNames.menuProduct.imageVisible);
+            } else if (!option.default && optionImage != null){
+              console.log(optionImage);
+            }
           }
         }
       }
