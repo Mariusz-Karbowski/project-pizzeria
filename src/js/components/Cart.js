@@ -101,7 +101,8 @@ class Cart{
     fetch(url, options)
       .then(function(response){
         return response.json();
-      }).then(function(parsedResponse){
+      })
+      .then(function(parsedResponse){
         console.log('parsedResponse', parsedResponse);
       });
   }
