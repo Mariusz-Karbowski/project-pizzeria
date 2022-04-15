@@ -119,7 +119,6 @@ class Product{
   }
   addToCart(){
     const thisProduct = this;
-    //app.cart.add(thisProduct.prepareCartProduct());
     const event = new CustomEvent('add-to-cart', {
       bubbles: true,
       detail: {
@@ -131,14 +130,14 @@ class Product{
   }
   prepareCartProduct(){
     const thisProduct = this;
-    const productSummary = {};
-    productSummary.id = thisProduct.id;
-    productSummary.name = thisProduct.data.name;
-    productSummary.amount = thisProduct.amountWidget.value;
-    productSummary.priceSingle = thisProduct.priceSingle;
-    productSummary.price = productSummary.priceSingle * productSummary.amount;
-    productSummary.params = {};
-    productSummary.params = thisProduct.prepareCartProductParams();
+    const productSummary = {
+      id: thisProduct.id,
+      name: thisProduct.data.name,
+      amount: thisProduct.amountWidget.value,
+      priceSingle: thisProduct.priceSingle,
+      price: thisProduct.priceSingle * thisProduct.amountWidget.value,
+      params: this.prepareCartProductParams()
+    };
     return productSummary;
   }
   prepareCartProductParams(){

@@ -86,7 +86,7 @@ class Cart{
       subtotalPrice: thisCart.subtotalPrice,
       totalNumber: thisCart.totalNumber,
       deliveryFee: thisCart.deliveryFee,
-      products: [],
+      products: []
     };
     for(let prod of thisCart.products){
       payload.products.push(prod.getData());
