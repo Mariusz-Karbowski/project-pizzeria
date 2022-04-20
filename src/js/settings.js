@@ -43,6 +43,11 @@ export const select = {
     peopleAmount: '.people-amount',
     hoursAmount: '.hours-amount',
     tables: '.floor-plan .table',
+    floorPlan: '.floor-plan',
+    phone: 'input[name="phone"]',
+    address: 'input[name="address"]',
+    starters: '.booking-form [name="starter"]',
+    form:'.order-confirmation [type="submit"]',
   },
   nav: {
     links: '.main-nav a',
@@ -78,6 +83,7 @@ export const classNames = {
   booking: {
     loading: 'loading',
     tableBooked: 'booked',
+    tablePicked: 'picked',    
   },
   nav: {
     active: 'active',
@@ -114,7 +120,7 @@ export const settings = {
   datePicker: {
     maxDaysInFuture: 14,
   },
-  booking: {
+  bookings: {
     tableIdAttribute: 'data-table',
   },  
 };
