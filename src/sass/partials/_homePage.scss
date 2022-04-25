@@ -1,0 +1,150 @@
+.homepage-widget {
+  display: block;
+}
+
+.home-wrapper {
+  margin: ($base-size * 3.5) auto;
+  padding: ($base-size * 6) ($base-size * 4);
+  background: $color-light;
+  border-bottom: 1px solid lighten($color-dark, 70%);
+  border-radius: $radius;
+}
+
+.homepage-header {
+  font-family: $font-header;
+  font-size: 26px;
+  font-weight: $font-semibold;
+  text-transform: uppercase;
+  color: $color-light;
+}
+
+.link-text, .opening-hours p {
+  color: $color-light;
+}
+
+.homepage-form a {
+  text-decoration: none;
+}
+
+.row {
+  height: 140px;
+  text-align: center;
+  align-items: center;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.book-table-row {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-online-button  {
+  background-image: url("../images/assets/pizza-1.jpg");
+  background-size: cover;
+  align-content: center;
+  height: 120px;
+  width: 50%;
+  border-radius: 5px;
+  margin: 0 5px 0 0;
+}
+
+.book-table-button  {
+  background-image: url("../images/assets/pizza-2.jpg");
+  background-size: cover;
+  align-content: center;
+  height: 120px;
+  width: 50%;
+  margin: 0 0 0 5px;
+  border-radius: 5px;
+}
+
+.button-text p {
+  color: $color-light;
+}
+
+.opening-hours {
+  background-color: #ff6b6b;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.carousel-cell {
+  display: flex;
+  margin: 10px auto;
+}
+
+.carousel-image {
+  width: 35%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.carousel-text {
+  padding: 0 30px;
+  font-family: $font-text;
+  
+  h3 {
+    text-transform: uppercase;
+  }
+}
+
+.main-carousel {
+  margin: 100px auto;
+}
+
+.gallery-wrapper {  
+  display: flex;
+  flex-wrap: wrap;  
+}
+
+.gallery-item {
+  display: flex;
+  flex: 30%;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-image {
+  height: 195px;
+  width: 195px;
+  object-fit: cover;
+  position: relative;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.gallery-icons {
+  position: absolute;
+  display: inline-flex;
+  
+  a {
+    margin-right: 15px;
+    color: $color-light;
+    visibility: hidden;
+  }
+}
+
+.gallery-icons:hover a {
+  visibility: visible;
+  font-size: large;
+  transition: $transition;
+
+  &:hover {
+    pointer-events: auto;
+    color: $color-main;
+  }
+}
+
+.socials {
+  padding-top: 21px;
+
+  a{
+    color: $color-main;
+  }
+}
